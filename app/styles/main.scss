@@ -1,0 +1,143 @@
+// bower:scss
+// endbower
+
+@import 'sass-meyer-reset/_sass-meyer-reset.sass';
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  height: 100%;
+  margin: 0;
+  overflow-x:hidden;
+  padding: 0;
+}
+body {
+  height: 100%;
+  font-size: 1.4rem;
+}
+
+// FONTS
+
+@font-face {
+font-family: 'FuturaCondensedLight';
+//src: url('fonts/FuturaCondensedLight.eot');
+src: url('fonts/FuturaCondensedLight.otf') format('truetype')//,
+     //url('fonts/FuturaCondensedLight.woff') format('woff'),
+     //url('fonts/FuturaCondensedLight.eot?#iefix') format('embedded-opentype'),
+     //url('fonts/FuturaCondensedLight.svg#QuadrantaBold') format('svg')
+     ;
+font-weight: normal;
+font-style: normal;
+}
+
+//
+
+.scrollContent {
+  height: 100%;
+}
+
+.trigger {
+  color: red;
+  position: relative;
+  z-index: 99;
+}
+
+#trigger-intro {
+  top: 51%;
+}
+
+#trigger-edito {
+  top: 53%;
+}
+
+// SECTIONS
+.intro, .edito {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+// INTRO
+.intro {
+  z-index: 30;
+}
+.intro__video {
+  background: #000;
+  left:0;
+  position:absolute;
+  top:0;
+}
+.intro__overlay {
+  background: rbga(0,0,0,0);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 31;
+}
+.intro__title {
+  background: url(../images/logo.png) no-repeat center center;
+  background-size: 40%;
+  color: #fff;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  text-indent: -9999px;
+  width: 100%;
+  z-index: 32;
+}
+ // EDITO
+.edito {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  z-index: 20;
+}
+.edito__background {
+  background: url(../images/edito-bg.jpg) 0 0 no-repeat;
+  z-index: 21;
+}
+.edito__background-over {
+  background: url(../images/edito-bg-over.jpg) 0 0 no-repeat;
+  opacity: 0;
+  z-index: 22;
+}
+.edito__background, .edito__background-over {
+  background-size: cover;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.edito__text {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 60%;
+  z-index: 23;
+
+    p {
+      color: #fff;
+      font-family: 'FuturaCondensedLight';
+      font-size: 2rem;
+      line-height: 1.5;
+      opacity: 0; // init
+      padding: 20px;
+      position: relative;
+      letter-spacing: 0.4rem;
+      text-align: center;
+      text-transform: uppercase;
+      top: 5%; // init
+    }
+
+}
+.page {
+  height: 1000px;
+}
+
+
+
