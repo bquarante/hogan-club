@@ -28,33 +28,62 @@
 
 
   <div class="scrollContent">
-
-    <div id="trigger-intro" class="trigger">trigger intro</div>
-
+    <div class="triggers">
+      <div id="trigger-edito" class="trigger">trigger 1</div>
+      <div id="trigger-editoToTrendSetters" class="trigger">trigger 2</div>
+      <div id="trigger-trendSetters" class="trigger">trigger 3</div>
+    </div>
     <!-- I N T R O -->
     <section class="intro">      
-      <div class="intro__overlay">
-        <h2 class="intro__title">Hogan Club</h2>
-      </div>
-      <video autoplay loop class="intro__video" id="intro__video" width="1440" height="810"><!-- poster="video.jpg" -->
+      <h2 class="intro__title">Hogan Club</h2>
+      <button type="button" class="btn">
+        Scroll to continue
+      </button>
+      <div class="intro__overlay"></div>
+      <video  loop muted class="intro__video" id="video" width="1440" height="810"><!-- poster="video.jpg" -->
         <source src="videos/intro.mp4" />
           <!-- <source src="video.webm" />
           <source src="video.ogv" />
          -->
       </video>
     </section>
-
-    <div id="trigger-edito" class="trigger">trigger edito</div>
     <!-- E D I T O -->
     <section class="edito">
       <div class="edito__text">
         <p>Step behind the velvet rope and escape inside a world where the bright young things meet up to let their hair down. Appearing through a dimly lit haze in secret chic venues and inner sanctums of glamorous nightclubs across the globe, they make the night come alive with electric energy and a thrilling sense of after dark cool.</p>
         <p>This is Hogan Club, a place where visionary minds meet, fronted by an international group of rising stars whose creative careers are as inspiring as their personal style. Wearing Hogan FW15, the young luminaries pay homage to an unconventional elegance through the collection’s sophisticated rock-chic mood and their own original takes on Hogan’s easy luxury and elevated sportswear.</p>
       </div>
-      <div class="edito__background-over"></div>
+      <button type="button" class="btn">
+        Scroll to continue
+      </button>
+      <div class="edito__backgroundOver"></div>
       <div class="edito__background"></div>
     </section>
-    <section class="page"></section>
+    <!-- TRAINER -->
+    <section class="trendSetters">
+      <article class="trendSetter__1">
+        <div class="trendSetter__1--bg">
+          <img src="images/trendSetter1-bg.jpg" alt="">
+        </div>
+        <div class="trendSetter__title">
+          <h2>Camille Charrière</h2>
+        </div>
+        <div class="trendSetter__1--picture1"></div>
+        <div class="trendSetter__1--picture2"></div>
+        <div class="trendSetter__1--picture3"></div>
+        <div class="trendSetter__1--picture4"></div>
+      </article>
+      <article class="trendSetter__2">
+        <div class="trendSetter__2--bg">
+          <img src="images/trendSetter2-bg.jpg" alt="">
+        </div>
+        <div class="trendSetter__title"></div>
+        <div class="trendSetter__2--picture1"></div>
+        <div class="trendSetter__2--picture2"></div>
+        <div class="trendSetter__2--picture3"></div>
+        <div class="trendSetter__2--picture4"></div>
+      </article>
+    </section>
   </div>
 
 
@@ -64,13 +93,14 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <!-- endbower -->
+    <script src="bower_components/maximage/lib/js/jquery.maximage.js"></script>
     <script src="bower_components/gsap/src/uncompressed/TweenMax.js"></script>
     <script src="bower_components/gsap/src/uncompressed/TimelineMax.js"></script>
     <script src="bower_components/ScrollMagic/js/jquery.scrollmagic.js"></script>
-    <script src="bower_components/maximage/lib/js/jquery.maximage.js"></script>
+    <script src="bower_components/ScrollMagic/js/jquery.scrollmagic.debug.js"></script>
     <!-- endbuild -->
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. 
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
       function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
@@ -78,7 +108,7 @@
       e.src='//www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
+    </script>-->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>

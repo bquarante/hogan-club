@@ -18,6 +18,11 @@ body {
   height: 100%;
   font-size: 1.4rem;
 }
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
 
 // FONTS
 
@@ -33,10 +38,15 @@ font-weight: normal;
 font-style: normal;
 }
 
-//
+
+// SCROLL ANIMATION
 
 .scrollContent {
   height: 100%;
+}
+
+.triggers {
+  height: 300%;
 }
 
 .trigger {
@@ -45,15 +55,20 @@ font-style: normal;
   z-index: 99;
 }
 
-#trigger-intro {
-  top: 51%;
+#trigger-edito {
+  top: 20%;
 }
 
-#trigger-edito {
-  top: 53%;
+#trigger-editoToTrendSetters {
+  top: 40%;
 }
+#trigger-trendSetters {
+  top: 50%;
+}
+
 
 // SECTIONS
+
 .intro, .edito {
   height: 100%;
   position: fixed;
@@ -61,8 +76,29 @@ font-style: normal;
   width: 100%;
 }
 
+.btn {
+  background: none;
+  border: 2px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'FuturaCondensedLight'; //not condensed
+  font-size: 1.4rem;
+  left: 50%;
+  letter-spacing: 0.1rem;
+  opacity: 0;
+  padding: 0.8rem 2.6rem;
+  position: absolute;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+  z-index: 32;
+}
+
+
 // INTRO
+
 .intro {
+  background: #000;
+  overflow: hidden;
   z-index: 30;
 }
 .intro__video {
@@ -85,12 +121,15 @@ font-style: normal;
   height: 100%;
   margin: 0;
   overflow: hidden;
+  opacity: 0;
   position: absolute;
   text-indent: -9999px;
   width: 100%;
   z-index: 32;
 }
- // EDITO
+
+// EDITO
+
 .edito {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
@@ -101,12 +140,12 @@ font-style: normal;
   background: url(../images/edito-bg.jpg) 0 0 no-repeat;
   z-index: 21;
 }
-.edito__background-over {
+.edito__backgroundOver {
   background: url(../images/edito-bg-over.jpg) 0 0 no-repeat;
   opacity: 0;
   z-index: 22;
 }
-.edito__background, .edito__background-over {
+.edito__background, .edito__backgroundOver {
   background-size: cover;
   height: 100%;
   position: absolute;
@@ -124,20 +163,50 @@ font-style: normal;
       color: #fff;
       font-family: 'FuturaCondensedLight';
       font-size: 2rem;
-      line-height: 1.5;
+      line-height: 1.2;
       opacity: 0; // init
       padding: 20px;
       position: relative;
       letter-spacing: 0.4rem;
       text-align: center;
       text-transform: uppercase;
-      top: 5%; // init
     }
 
 }
-.page {
-  height: 1000px;
+
+
+// TRENDSETTERS
+.scrollContent > section {
+  //left: -100px
 }
+.trendSetters {
+  background: red;//#000;
+  //height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
 
+  
+}
+.trendSetters article {
+  clear: both;
+  position: relative;
+}
+.trendSetter__title {
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  display: block;
+  font-family: serif;
+  font-size: 5rem;
+  left: 50%;
+  position: fixed;
+  transform: translateX(-50%)
 
-
+}
+.trendSetter__1--bg {
+  float: right;
+  width: 50%;
+}
+.trendSetter__2--bg {
+  width: 50%;
+}
