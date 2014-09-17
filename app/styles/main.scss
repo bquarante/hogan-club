@@ -44,9 +44,10 @@ font-style: normal;
 .scrollContent {
   height: 100%;
 }
+$sections : 6;
 
 .triggers {
-  height: 300%;
+  height: $sections  * 100%;
 }
 
 .trigger {
@@ -56,14 +57,14 @@ font-style: normal;
 }
 
 #trigger-edito {
-  top: 20%;
+  top: 100% / $sections;
 }
 
 #trigger-editoToTrendSetters {
-  top: 40%;
+  top: 200% / $sections;
 }
 #trigger-trendSetters {
-  top: 50%;
+  top: 300% / $sections;
 }
 
 
@@ -180,7 +181,7 @@ font-style: normal;
   //left: -100px
 }
 .trendSetters {
-  background: red;//#000;
+  background: grey;//#000;
   //height: 100%;
   position: fixed;
   top: 0;

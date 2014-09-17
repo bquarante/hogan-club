@@ -114,38 +114,25 @@
 
 
       // TWEEN : TRENDSETTERS
+
+      var trendSettersHeight = Number($('.trendSetters').height());
+
       var trendSetters_tl = new TimelineMax();
       trendSetters_tl.add([
         TweenMax.fromTo('.trendSetters', 1, {'top' : '0'},{'top' : $(window).innerHeight() - $('.trendSetters').height() })      
 
       ])
-
-      
+console.log('duration' + trendSettersHeight *4)
       // SCENE : TRENDSETTERS
       var trendSetters_scene = new ScrollScene({
         triggerElement: '#trigger-trendSetters',
         tweenChanges: true,
-        duration: getWindowHeight
+        duration: trendSettersHeight 
       })
       .setTween(trendSetters_tl)
       .addTo(this.controller)
 
       trendSetters_scene.addIndicators();
-
-
-
-      var trendSetters_title_scene = new ScrollScene({
-        triggerElement: '#trigger-trendSetters',
-        //tweenChanges: true,
-        duration: getWindowHeight/2
-      })
-      .setTween(
-        TweenMax.fromTo('.trendSetter__1 .trendSetter__title', 1, {'top' : '100%'},{'top' : '20%'})
-      )
-      .addTo(this.controller)
-
-
-
 
     }
 
