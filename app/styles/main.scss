@@ -45,27 +45,30 @@ font-style: normal;
   height: 100%;
 }
 
-.triggers {
-  height: 300%;
+.scrolling {
+  height: 101%;
 }
+
 
 .trigger {
+  background: #fff;
   color: red;
-  position: relative;
+  position: absolute;
+  //top: 10%;
   z-index: 99;
 }
-
-#trigger-edito {
-  top: 20%;
+.trigger0 {
+  top: 0px;
 }
-
-#trigger-editoToTrendSetters {
-  top: 40%;
+.trigger1 {
+  top: 120px;
 }
-#trigger-trendSetters {
-  top: 50%;
+.trigger2 {
+  top: 240px;
 }
-
+.trigger3 {
+  top: 340px;
+}
 
 // SECTIONS
 
