@@ -47,6 +47,7 @@ font-style: normal;
 
 .scrolling {
   height: 101%;
+  overflow: hidden;
 }
 
 
@@ -64,10 +65,11 @@ font-style: normal;
   top: 120px;
 }
 .trigger2 {
+  //display: none;
   top: 240px;
 }
 .trigger3 {
-  top: 340px;
+  //top: 840px;
 }
 
 // SECTIONS
@@ -183,7 +185,7 @@ font-style: normal;
   //left: -100px
 }
 .trendSetters {
-  background: red;//#000;
+  background: #777;
   //height: 100%;
   position: fixed;
   top: 0;
@@ -193,6 +195,7 @@ font-style: normal;
 }
 .trendSetters article {
   clear: both;
+  overflow: hidden;
   position: relative;
 }
 .trendSetter__title {
