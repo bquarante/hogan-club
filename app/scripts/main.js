@@ -177,10 +177,14 @@
       // TWEEN
       var trendSetter1_tl = new TimelineMax();
       trendSetter1_tl.add([
-        TweenMax.to('.trendSetter1 .trendSetter--name', 10, {'top' : -($('.trendSetter1 .trendSetter--name').height()+10) }),
+        TweenMax.to('.trendSetter1 .trendSetter--name', 9, {'top' : -($('.trendSetter1 .trendSetter--name').height()+10) }),
         TweenMax.to('.trendSetter1--picture1', 3, {'top' : -($('.trendSetter1--picture1').height())}),
-        TweenMax.to('.trendSetter1--picture2', 2, {'top' : -($('.trendSetter1--picture2').height())})
+        TweenMax.to('.trendSetter1--picture2', 2, {'top' : -($('.trendSetter1--picture2').height())}),
+        TweenMax.to('.trendSetter1 .quote', 8, {'top' : -($('.trendSetter1 .quote').height())}),
+        TweenMax.to('.trendSetter1--picture3', 5, {'top' : -($('.trendSetter1--picture3').height()), delay:3}),
+        TweenMax.to('.trendSetter1--picture4', 10, {'top' : -($('.trendSetter1--picture4').height()), delay:1})
       ])
+       // trendSetter1_tl.to('.trendSetter1 .quote', 2, {'top' : -($('.trendSetter1 .quote').height())}, '-=7')
 
       // SCENE 
       var trendSetters1_scene = new ScrollScene({

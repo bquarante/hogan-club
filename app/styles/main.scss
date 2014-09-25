@@ -212,6 +212,27 @@ font-style: normal;
 
 }
 
+.quote {
+  color: #fff;
+  font-size: 2.2rem;
+  letter-spacing: 0.3rem;
+  line-height: 1.2;
+  position: fixed;
+  text-align: center;
+  z-index: 17;
+
+  &:before {
+    content: '“';
+    line-height: 0.3; //because of natural upleading
+  }
+  &:after {
+    content: '”';
+  }
+  &:before, &:after {
+    display: block;
+    font-size: 3em;
+  }
+}
 
 // TRENDSETTERS 1
 
@@ -220,18 +241,36 @@ font-style: normal;
   width: 50%;
   z-index: 10;
 }
-.trendSetter1--picture1 {
+[class*='picture'] {
   position: fixed;
+  top: 100%;
+}
+.trendSetter1--picture1 {
   left: 10%;
   width: 33%;
   z-index: 18
 }
 .trendSetter1--picture2 {
-  position: fixed;
   left: 46%;
   width: 33%;
   z-index: 18;
 }
+.trendSetter1--picture3 {
+  left: 15%;
+  width: 33%;
+  z-index: 18
+}
+.trendSetter1--picture4 {
+  left: 55%;
+  width: 33%;
+  z-index: 18;
+}
+.trendSetter1 .quote {
+  left: 20%;
+  top: 100%; //init
+  width: 30%;
+}
+
 
 // TRENDSETTERS 2
 
