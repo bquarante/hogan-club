@@ -15,6 +15,7 @@ html {
   padding: 0;
 }
 body {
+  background-color: #000;
   height: 100%;
   font-size: 1.4rem;
 }
@@ -68,9 +69,7 @@ font-style: normal;
   //display: none;
   top: 240px;
 }
-.trigger3 {
-  //top: 840px;
-}
+
 
 // SECTIONS
 
@@ -185,34 +184,57 @@ font-style: normal;
   //left: -100px
 }
 .trendSetters {
-  background: #777;
-  //height: 100%;
   position: fixed;
   top: 0;
   width: 100%;
-
-  
 }
 .trendSetters article {
-  clear: both;
-  overflow: hidden;
+  //clear: both;
+  //overflow: hidden;
+  display: inline-block;
   position: relative;
+  width: 100%;
 }
-.trendSetter__title {
-  border-bottom: 2px solid #fff;
+.trendSetter--name {
   color: #fff;
   display: block;
   font-family: serif;
   font-size: 5rem;
-  left: 50%;
   position: fixed;
-  transform: translateX(-50%)
+  text-align: center;
+  width: 100%;
+  z-index: 19;
+
+  h2 {
+    border-bottom: 2px solid #fff;
+    display: inline-block;
+  }
 
 }
-.trendSetter__1--bg {
+
+
+// TRENDSETTERS 1
+
+.trendSetter1--bg {
   float: right;
   width: 50%;
+  z-index: 10;
 }
-.trendSetter__2--bg {
+.trendSetter1--picture1 {
+  position: fixed;
+  left: 10%;
+  width: 33%;
+  z-index: 18
+}
+.trendSetter1--picture2 {
+  position: fixed;
+  left: 46%;
+  width: 33%;
+  z-index: 18;
+}
+
+// TRENDSETTERS 2
+
+.trendSetter2--bg {
   width: 50%;
 }

@@ -38,7 +38,7 @@
         var triggerHeight = $('.trigger' + Number(step)).position().top;
         var scrollingHeight = $(window).innerHeight() + triggerHeight + 2 + 'px'
 
-        TweenMax.to($('.scrollContent'),1,{
+        TweenMax.to($('.scrollContent'),.4,{
           'height' : scrollingHeight,
           onComplete : function(){
             if(step === 3){
@@ -60,7 +60,7 @@
       intro_tl.fromTo('.intro .btn', 0.8, {'bottom': '5%', 'opacity' : '0'} , {'bottom': '12%' , 'opacity' : '1', ease:Power2.easeOut})
       intro_tl.call(videoStart)
       intro_tl.call(enableNextStep, [1])
-      
+
       // SCENE : INTRO
       var intro_scene = new ScrollScene({
         triggerElement: '.trigger0',
@@ -127,7 +127,10 @@
       editoToTrendSetters_tl.fromTo('.edito .btn', 0.8, {'bottom': '12%' , 'opacity' : '1'}, {'bottom': '14%' , 'opacity' : '0', immediateRender : false}, '-=0.4')
       editoToTrendSetters_tl.add([
         TweenMax.to('.edito', 1, {'top': '-100%', ease:Power1.easeOut }),
-        TweenMax.fromTo('.trendSetters', 1, {'top': '50%'} , {'top': '0' })
+        TweenMax.fromTo('.trendSetters', 1, {'top': '50%'} , {'top': '0' , ease:Power1.easeOut}),
+        TweenMax.fromTo('.trendSetter1 .trendSetter--name', 1.4, {'top' : '100%'},{'top' : '40%', ease:Power1.easeOut}),
+        TweenMax.fromTo('.trendSetter1--picture1', 1, {'top' : '100%'},{'top' : '20%', ease:Power3.easeOut}),
+        TweenMax.fromTo('.trendSetter1--picture2', 1, {'top' : '100%'},{'top' : '80%', ease:Power3.easeOut})
       ]);
       editoToTrendSetters_tl.call(enableNextStep, [3])
 
@@ -143,16 +146,17 @@
       editoToTrendSetters_scene.on("start", function(event){
         if(event.scrollDirection === 'REVERSE'){
           introToEdito_scene.enabled(false);
+          enableNextStep(2)
         }
       });
 
 
+      // SCROLLBAR SET TO TRENDSETTERS TOTAL HEIGHT
 
       // TWEEN : TRENDSETTERS
       var trendSetters_tl = new TimelineMax();
       trendSetters_tl.add([
-        TweenMax.fromTo('.trendSetters', 1, {'top' : '0'},{'top' : $(window).innerHeight() - $('.trendSetters').height() })      
-
+        TweenMax.to('.trendSetters', 1, {'top' : $(window).innerHeight() - $('.trendSetters').height() })
       ])
 
       var durationTrendSetters = Math.abs( $('.trigger2').position().top -  $('.trigger3').position().top) 
@@ -165,22 +169,30 @@
         duration: durationTrendSetters
       })
       .setTween(trendSetters_tl)
-      //trendSetters_scene.addTo(controller)
-      //.addIndicators({zindex: 100})
-
-      //trendSetters_scene.addIndicators();
+      
 
 
-      // var trendSetters_title_scene = new ScrollScene({
-      //   triggerElement: '#trigger-trendSetters',
-      //   //tweenChanges: true,
-      //   duration: getWindowHeight/2
-      // })
-      // .setTween(
-      //   TweenMax.fromTo('.trendSetter__1 .trendSetter__title', 1, {'top' : '100%'},{'top' : '20%'})
-      // )
-      // .addTo(controller)
+      // TRENDSETTER 1
 
+      // TWEEN
+      var trendSetter1_tl = new TimelineMax();
+      trendSetter1_tl.add([
+        TweenMax.to('.trendSetter1 .trendSetter--name', 10, {'top' : -($('.trendSetter1 .trendSetter--name').height()+10) }),
+        TweenMax.to('.trendSetter1--picture1', 3, {'top' : -($('.trendSetter1--picture1').height())}),
+        TweenMax.to('.trendSetter1--picture2', 2, {'top' : -($('.trendSetter1--picture2').height())})
+      ])
+
+      // SCENE 
+      var trendSetters1_scene = new ScrollScene({
+        triggerElement: '.trendSetter1',
+        triggerHook: 'onLeave',
+        // tweenChanges: true,
+        offset: 20, // to prevent tween to restart from previous starting point -100% (!) because its the same trigger
+        duration: getWindowHeight
+      })
+      .setTween(trendSetter1_tl)
+      .addTo(controller)
+      trendSetters1_scene.addIndicators({zindex:100})
 
 
 
