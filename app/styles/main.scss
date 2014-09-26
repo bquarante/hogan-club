@@ -180,6 +180,8 @@ font-style: normal;
 
 
 // TRENDSETTERS
+
+
 .scrollContent > section {
   //left: -100px
 }
@@ -192,6 +194,7 @@ font-style: normal;
   //clear: both;
   //overflow: hidden;
   display: inline-block;
+  // height: 100%;
   position: relative;
   width: 100%;
 }
@@ -202,6 +205,7 @@ font-style: normal;
   font-size: 5rem;
   position: fixed;
   text-align: center;
+  top: 100%; //init
   width: 100%;
   z-index: 19;
 
@@ -211,7 +215,9 @@ font-style: normal;
   }
 
 }
-
+.quote {
+  top: 100%; //init
+}
 .quote {
   color: #fff;
   font-size: 2.2rem;
@@ -267,7 +273,6 @@ font-style: normal;
 }
 .trendSetter1 .quote {
   left: 20%;
-  top: 100%; //init
   width: 30%;
 }
 
@@ -277,3 +282,21 @@ font-style: normal;
 .trendSetter2--bg {
   width: 50%;
 }
+.trendSetter2 .trendSetter--name {
+  margin-left: 15%;
+}
+.trendSetter2 .quote {
+  right: 10%;
+  width: 40%;
+}
+
+// TRENDSETTERS 3
+
+.trendSetter3 {
+  height: 500px;
+}
+
+
+
+
+

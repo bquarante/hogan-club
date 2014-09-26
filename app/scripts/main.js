@@ -177,15 +177,14 @@
       // TWEEN
       var trendSetter1_tl = new TimelineMax();
       trendSetter1_tl.add([
-        TweenMax.to('.trendSetter1 .trendSetter--name', 9, {'top' : -($('.trendSetter1 .trendSetter--name').height()+10) }),
+        TweenMax.to('.trendSetter1 .trendSetter--name', 6, {'top' : -($('.trendSetter1 .trendSetter--name').height()+10) }),
         TweenMax.to('.trendSetter1--picture1', 3, {'top' : -($('.trendSetter1--picture1').height())}),
         TweenMax.to('.trendSetter1--picture2', 2, {'top' : -($('.trendSetter1--picture2').height())}),
         TweenMax.to('.trendSetter1 .quote', 8, {'top' : -($('.trendSetter1 .quote').height())}),
         TweenMax.to('.trendSetter1--picture3', 5, {'top' : -($('.trendSetter1--picture3').height()), delay:3}),
         TweenMax.to('.trendSetter1--picture4', 10, {'top' : -($('.trendSetter1--picture4').height()), delay:1})
       ])
-       // trendSetter1_tl.to('.trendSetter1 .quote', 2, {'top' : -($('.trendSetter1 .quote').height())}, '-=7')
-
+       
       // SCENE 
       var trendSetters1_scene = new ScrollScene({
         triggerElement: '.trendSetter1',
@@ -199,6 +198,29 @@
       trendSetters1_scene.addIndicators({zindex:100})
 
 
+      // TRENDSETTER 2
+
+      // TWEEN
+      var trendSetter2_tl = new TimelineMax();
+      trendSetter2_tl.add([
+        TweenMax.to('.trendSetter2 .trendSetter--name', 6, {'top' : -($('.trendSetter2 .trendSetter--name').height()+10) }),
+        TweenMax.to('.trendSetter2 .quote', 8, {'top' : -($('.trendSetter2 .quote').height()), delay:1})
+        // TweenMax.to('.trendSetter2--picture1', 3, {'top' : -($('.trendSetter2--picture1').height())})
+        // TweenMax.to('.trendSetter2--picture2', 2, {'top' : -($('.trendSetter2--picture2').height())}),
+        // TweenMax.to('.trendSetter2--picture3', 5, {'top' : -($('.trendSetter2--picture3').height()), delay:3}),
+        // TweenMax.to('.trendSetter2--picture4', 10, {'top' : -($('.trendSetter2--picture4').height()), delay:1})
+      ])
+
+      // SCENE 
+      var trendSetters2_scene = new ScrollScene({
+        triggerElement: '.trendSetter2',
+        triggerHook: 'onCenter',
+        // offset: 20,
+        duration: getWindowHeight
+      })
+      .setTween(trendSetter2_tl)
+      .addTo(controller)
+      //trendSetters2_scene.addIndicators({zindex:100})
 
     }
 
