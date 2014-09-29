@@ -204,6 +204,7 @@
       var trendSetter2_tl = new TimelineMax();
       trendSetter2_tl.add([
         TweenMax.to('.trendSetter2 .trendSetter--name', 6, {'top' : -($('.trendSetter2 .trendSetter--name').height()+10) }),
+        //TweenMax.to('.trendSetter2 .trendSetter--name', 2, {'opacity' : 0 , delay:2}),
         TweenMax.to('.trendSetter2 .quote', 8, {'top' : -($('.trendSetter2 .quote').height()), delay:1})
         // TweenMax.to('.trendSetter2--picture1', 3, {'top' : -($('.trendSetter2--picture1').height())})
         // TweenMax.to('.trendSetter2--picture2', 2, {'top' : -($('.trendSetter2--picture2').height())}),
