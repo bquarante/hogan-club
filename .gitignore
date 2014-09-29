@@ -3,5 +3,4 @@ node_modules
 .tmp
 .sass-cache
 bower_components
-app/videos
 test/bower_components

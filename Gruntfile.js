@@ -210,7 +210,7 @@ module.exports = function (grunt) {
             '<%= config.dist %>/scripts/{,*/}*.js',
             '<%= config.dist %>/styles/{,*/}*.css',
             '<%= config.dist %>/images/{,*/}*.*',
-            '<%= config.dist %>/styles/fonts/{,*/}*.*',
+            //'<%= config.dist %>/styles/fonts/{,*/}*.*',
             '<%= config.dist %>/*.{ico,png}'
           ]
         }
@@ -318,6 +318,7 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,png,txt}',
             'images/{,*/}*.webp',
+            'videos/{,*/}*.*',
             '{,*/}*.html',
             'styles/fonts/{,*/}*.*'
           ]
