@@ -5,7 +5,8 @@
     "jquery": "~1.11.1",
     "modernizr": "~2.8.2",
     "maximage": "*",
-    "underscore": "~1.7.0"
+    "underscore": "~1.7.0",
+    "raphael": "~2.1.2"
   },
   "devDependencies": {
     "ScrollMagic": "~1.1.1",
