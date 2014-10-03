@@ -10,51 +10,72 @@
 
       // Set video to cover the whole page whatever its size
       $('#video').maximage('maxcover');
-
+      $('#thecanvas').attr('width', ($('#video').width()));
+      $('#thecanvas').attr('height', $('#video').height());
+      $('svg').attr('width', ($('#video').width()));
+      $('svg').attr('height', $('#video').height());
+      $('svg').css({
+        'margin-left' : $('#video').css('margin-left'),
+        'margin-top' : $('#video').css('margin-top')
+      });
       function videoStart(){
         var intro__video = document.getElementById('video');
         //intro__video.play();
       }
-      
-      
-      var svgHeight = $('svg image').attr('height'),
-          maskHeightEnd = svgHeight / 2;
 
+      /* 
+      ------  
+      */
+      var thevideo = document.getElementById('video');
+      var thecanvas = document.getElementById('thecanvas');
+      var img = document.getElementById('video-img');
+ 
       // set mask height
-      $('#svgPath rect').attr('height', $('svg image').attr('height'));
+      $('#svgPath rect').attr('height', $('svg').attr('height'));
+        
+      function draw( video, thecanvas, img ){
 
-      // move each rect mask
-      $( "#svgPath rect" ).each(function( index, element ) {
+        // get the canvas context for drawing
+        var context = thecanvas.getContext('2d');
 
-        index = index+1;
-        var obj = $('#svgPath rect:nth-child(' + index + ')');
-        var mask = {maskHeight: obj.attr('height')};
-        TweenLite.to(mask, 1, {maskHeight: maskHeightEnd, onUpdate: onUpdateHandler, delay: index*0.13});
-      
-        function onUpdateHandler() {
-            $('#svgPath rect:nth-child('+ index + ')').attr('height', mask.maskHeight);
-        }
-      });
+        // draw the video contents into the canvas x, y, width, height
+        context.drawImage( video, 0, 0, thecanvas.width, thecanvas.height);
 
-      //TweenLite.to($('svg image'), 2, {y:-maskHeightEnd})
+        // get the image data from the canvas object
+        var dataURL = thecanvas.toDataURL();
 
-     
-      // ScrollMagic
-      // var controller = new ScrollMagic();
+        // set the source of the img svg
+        $('svg image').attr('xlink:href', dataURL);
+        $('.video-over').css({'visibility' : 'visible'})
+        // hide the video
+        $('#video').css({'visibility' : 'hidden'})
+        mask();
+      }
 
-      // // build scene
-      // var scene = new ScrollScene({
-      //   triggerElement: '.trig-intro',
-      //   triggerHook: 'onLeave',
-      //   duration: 500
-      // })
-      //   .setPin('.intro')
-      //   .addTo(controller)
-      //   .addIndicators({zindex: 100});
-       
-    
+      function mask(){
 
 
+        var svgHeight = $('svg').attr('height'),
+            maskHeightEnd = svgHeight / 2;
+
+        // move each rect mask
+        $( "#svgPath rect" ).each(function( index, element ) {
+
+          index = index+1;
+          var obj = $('#svgPath rect:nth-child(' + index + ')');
+          var mask = {maskHeight: obj.attr('height')};
+          TweenLite.to(mask, 1, {maskHeight: maskHeightEnd, onUpdate: onUpdateHandler, delay: index*0.13});
+        
+          function onUpdateHandler() {
+              $('#svgPath rect:nth-child('+ index + ')').attr('height', mask.maskHeight);
+          }
+
+        });
+      }
+
+      thevideo.addEventListener('pause', function(){
+        draw( video, thecanvas, img);
+      }, false);
 
 
 

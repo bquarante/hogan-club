@@ -80,10 +80,14 @@ font-style: normal;
   //z-index: 30;
 }
 .intro__video {
-  background: #000;
-  left:0;
-  position:absolute;
-  top:0;
+}
+.video-over {
+  position: absolute;
+  visibility: hidden;
+}
+#thecanvas {
+  position: absolute;
+  visibility: hidden;
 }
 // // .intro__overlay {
 // //   background: rbga(0,0,0,0);
